@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   request(
-    { url: 'https://livepeer.com/api/stream' },
+    { url: 'https://cors-anywhere.herokuapp.com/https://livepeer.com/api/stream' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: error.message });
