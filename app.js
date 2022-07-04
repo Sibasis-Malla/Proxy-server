@@ -13,7 +13,7 @@ app.get('/api/data/:tweetId', async(req, res) => {
     console.log(tweetId)
    await axios
     .get(
-      `https://publish.twitter.com/oembed?url=https://twitter.com/Interior/status/${tweetId}&theme=dark&omit_script=1`
+      `https://publish.twitter.com/oembed?url=https://twitter.com/Interior/status/${tweetId}&theme=dark&omit_script=1&chrome=noscrollbar`
  ).then((response)=>{
         // console.log("worked");
         // console.log(response.data.streamKey)
