@@ -8,12 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/data/:tweetId', async(req, res) => {
-    const { tweetId } = req.params;
-    console.log(tweetId)
+app.get(`/api/:url`, async(req, res) => {
+    const { url } = req.params;
+    console.log(Id)
    await axios
     .get(
-      `https://publish.twitter.com/oembed?url=https://twitter.com/Interior/status/${tweetId}&theme=dark&chrome=noscrollbar`
+      `https://api.websitecarbon.com/site?url=${url}`
  ).then((response)=>{
         // console.log("worked");
         // console.log(response.data.streamKey)
