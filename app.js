@@ -20,7 +20,7 @@ app.get(`/api/:url`, async(req, res) => {
         //console.log(response.data)
         const data = response.data;
         //const res2 = JSON.parse(response.data)
-        res.send(JSON.stringify(data))
+        res.json(data)
        
     }).catch( error => {
         console.error(`Could not get products: ${error}`);
