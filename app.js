@@ -10,15 +10,18 @@ app.use(cors());
 
 app.get(`/api/:url`, async(req, res) => {
     const { url } = req.params;
-    console.log(Id)
+    //console.log(Id)
    await axios
     .get(
       `https://api.websitecarbon.com/site?url=${url}`
  ).then((response)=>{
         // console.log("worked");
         // console.log(response.data.streamKey)
-        //console.log(response)
-       res.json(response.data);
+        //console.log(response.data)
+        const data = response.data;
+        //const res2 = JSON.parse(response.data)
+        res.send(JSON.stringify(data))
+       
     }).catch( error => {
         console.error(`Could not get products: ${error}`);
         res.json(error)
